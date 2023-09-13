@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Charting</title>
+    <!-- cdn font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+    <!-- css tags  -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #ece9e9;
+        }
+        nav{
+            background-color: #65c764;
+            height: 50px;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 45px;
+        }
+        fieldset{
+            display: block ;
+            margin: 50px 40vw 0 40vw;
+            box-shadow: 4px 4px 4px rgb(95, 75, 225) ;
+        }
+        
+        h2{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 20px 0;
+            font-size: 30;
+            color: red;
+        }
+        
+        label{
+            margin: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input{
+            height: 4vh;
+        }
+        #phoneNumber{
+            margin: 20px 100px 20px 130px;
+        }
+        button{
+            margin: 20px 100px 20px 120px;
+            height: 5vh;
+            width: 25vh;
+            background-color: transparent;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #65c764;
+        }
+        button:hover{
+            background-color: black;
+            border-radius: 12px ;
+            border-color: red;
+        }
+
+        /* media queries */
+        @media screen and (min-width: 350px) and (max-width: 900px) {
+            nav{
+                height : 75px;
+            }
+            h1{
+                font-size: 25px;
+            }
+            fieldset{
+            display: block ;
+            margin: 25px 20vw 0 20vw;
+            box-shadow: 4px 4px 4px rgb(95, 75, 225) ;
+            }
+            h2{
+            display: flex;
+            justify-content: center;
+            margin: 5px 0 10px 0;
+            font-size: 20;
+            color: red;
+            }
+            label{
+            margin: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            }
+            #phoneNumber{
+            margin: 20px 100px 20px 120px;
+            }
+            button{
+            margin: 20px 100px 20px 120px;
+            height: 5vh;
+            width: 25vh;
+            background-color: transparent;
+            border-radius: 8px;
+            font-size: 105x;
+            font-weight: bold;
+            color: #65c764;
+            }
+        
+    </style>
+
+
+    <!-- HTML Tags  -->
+    <nav>
+        <h1>Chat without saving any WhatsApp Number</h1>
+    </nav>
+    <fieldset>
+            <h2>WhatsApp Number Only 
+                <i class="fa-brands fa-whatsapp fa-fade fa-lg" style="color: #4bca59; margin:15px 30px 0 30px"></i>
+            </h2>
+        
+           <form id="form">
+            <label for="phoneNumber">Enter the number(without any   special key) </label>
+            <input type="text" id="phoneNumber" placeholder="91XXXXXX10" required>
+            <button type="button" onclick="redirectToWhatsApp(); button()"> Open WhatsApp </button>
+           </form>
+        
+    </fieldset>
+
+    <!-- javascript tags  -->
+
+    <script> 
+
+        function redirectToWhatsApp(){
+            const phoneNumber = document.getElementById("phoneNumber").value; 
+            if (phoneNumber) {
+                // Construct the WhatsApp URL and redirect
+                const whatsappURL = `https://wa.me/${phoneNumber}`;
+                window.location.href = whatsappURL;
+            } else {
+                alert('Please enter a valid phone number.');
+            }
+        }
+    
+        function button(){
+        let btn = document.querySelector("#btn");
+        btn.style.backgroundColor = "Black";
+        btn.style.borderColor = "red";
+    }
+    </script>
+</body>
+</html>
